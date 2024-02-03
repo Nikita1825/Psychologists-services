@@ -1,6 +1,6 @@
 import React from "react";
 import { onValue,query,endBefore } from 'firebase/database';
-import { useState ,useEffect, useMemo } from "react";
+import { useState ,useEffect } from "react";
 import { database } from "../firebase-config";
 import PsychologistList from "components/Psychologist/PsychologistList";
 
@@ -11,10 +11,7 @@ const Psychologists = () => {
     const [page, setPage] = useState(1);
     const [limit, setLimit] = useState(4);
 
-    const showMore = () => {
-        setPage(prevState => prevState + 1);
-        setLimit(prevState => prevState + 4);
-      };
+    
     
     useEffect(()=>{
         
