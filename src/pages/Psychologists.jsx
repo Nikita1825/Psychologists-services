@@ -14,15 +14,15 @@ const Psychologists = () => {
     
     useEffect(()=>{
         
-        const queryRef = query(database,  endBefore(`${limit}`));
         
-        onValue(queryRef, (snapshot)=>{
+        
+        onValue(database, (snapshot)=>{
             const currentData = snapshot.val();
             console.log(currentData)
             setPsychologists(currentData)
 
         })
-    } ,[limit, page])
+    } ,[ ])
 
     return (
     <div >
