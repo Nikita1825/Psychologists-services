@@ -18,7 +18,7 @@ export const App = () => {
  return (
   <div  >
   <header className={css.header} >
-      <a className={css.logo}><span className={css.logo_span}>psychologists.</span>services</a>
+      <a href='/#' className={css.logo}><span className={css.logo_span}>psychologists.</span>services</a>
     <div className={css.container}>
 
     <nav className={css.navigation} >

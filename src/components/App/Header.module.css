@@ -26,6 +26,7 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
+    text-decoration: none;
     color:#191A15
 }
 .nav_link{
@@ -41,7 +42,7 @@
 }
 .form{
     display: flex;
-    justify-content: end;
+    justify-content:flex-end;
     margin-left: auto;
     padding-top: 20px;
 }
