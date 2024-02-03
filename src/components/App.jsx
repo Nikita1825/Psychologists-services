@@ -1,10 +1,6 @@
-
-
-
-
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense} from 'react';
-import { RegisterForm } from "./Register";
+
 const HomePage = lazy(() => import('pages/Home'))
 const PsychologistsPage = lazy(() => import('pages/Psychologists'));
 const FavoritePage = lazy(() => import('pages/Favorites'));

@@ -1,5 +1,5 @@
 import React from "react";
-import { getDatabase,ref,child,onValue, get,query,endBefore } from 'firebase/database';
+import { onValue,query,endBefore } from 'firebase/database';
 import { useState ,useEffect, useMemo } from "react";
 import { database } from "../firebase-config";
 import PsychologistList from "components/Psychologist/PsychologistList";
