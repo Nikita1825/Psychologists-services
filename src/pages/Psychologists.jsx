@@ -8,8 +8,7 @@ import PsychologistList from "components/Psychologist/PsychologistList";
 
 const Psychologists = () => {
     const [ psychologists, setPsychologists] = useState([ ])
-    const [page, setPage] = useState(1);
-    const [limit, setLimit] = useState(4);
+    
 
     
     
