@@ -1,5 +1,8 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense} from 'react';
+import css from "./Header.module.css"
+import { RegisterForm } from 'components/Register/Register';
+import LoginForm from 'components/Login/Login';
 
 const HomePage = lazy(() => import('pages/Home'))
 const PsychologistsPage = lazy(() => import('pages/Psychologists'));
@@ -13,19 +16,28 @@ export const App = () => {
 
 
  return (
-  <div >
-  <header >
-    <nav >
-      <NavLink  to="/">
+  <div  >
+  <header className={css.header} >
+      <a className={css.logo}><span className={css.logo_span}>psychologists.</span>services</a>
+    <div className={css.container}>
+
+    <nav className={css.navigation} >
+      <NavLink className={css.nav_link}  to="/">
         Home
       </NavLink>
-      <NavLink to="/psychologists">
+      <NavLink className={css.nav_link} to="/psychologists">
       Psychologists
       </NavLink>
-      <NavLink  to="/favorites">
+      <NavLink className={css.nav_link}  to="/favorites">
         Favourites
       </NavLink>
     </nav>
+    </div>
+    <div className={css.form}>
+      
+    <LoginForm />
+    <RegisterForm/>
+    </div>
   </header>
   <main>
     <Suspense>
