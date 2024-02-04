@@ -16,7 +16,7 @@ export const App = () => {
 
 
  return (
-  <div  >
+  <div className={css.appContainer}  >
   <header className={css.header} >
       <a href='/#' className={css.logo}><span className={css.logo_span}>psychologists.</span>services</a>
     <div className={css.container}>
