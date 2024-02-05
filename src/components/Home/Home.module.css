@@ -117,6 +117,15 @@ font-size: 24px;
 line-height: 29.05px;
 color: rgb(251, 251, 251);
 }
+.home_depths{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 82px;
+    color: 
+    #FC832C;
+    margin-bottom: 20px;
+}
 
 
 @media screen and (max-width:768px){
