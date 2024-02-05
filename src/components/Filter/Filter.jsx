@@ -29,7 +29,7 @@ export const Filter = ({changeFilter}) => {
         };
     
         setFilterAlphabet(event.target.innerHTML);
-        console.log(newFilter)
+        console.log(filterAlphabet)
     
         changeFilter(newFilter);
     
