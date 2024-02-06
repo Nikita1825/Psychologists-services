@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/749.ede77975.chunk.css","mappings":"AAAA,wCACI,qBAEJ","sources":["components/Psychologist/PsychologistList.module.css"],"sourcesContent":[".psychologistLi{\n    border: 1px solid black;\n    \n}\n"],"names":[],"sourceRoot":""}
