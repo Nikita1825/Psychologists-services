@@ -1,10 +1,10 @@
 import React from 'react';
 import { useContext,  useState, useEffect } from 'react';
 import { FilterContex } from 'context';
-import { getAlphabetList } from 'utils/getAlphabet';
+import { getAlphabetList, getExperienceList } from 'utils/getAlphabet';
 import { onValue } from 'firebase/database';
 import { database } from "../../firebase-config";
-
+import css from './Filter.module.css'
 
 
 export const Filter = ({changeFilter}) => {
@@ -15,25 +15,61 @@ export const Filter = ({changeFilter}) => {
     const [filterAlphabet, setFilterAlphabet] = useState('');
     const alphabetList = getAlphabetList(psychologists);
 
+    const [visibleExperience, setVisibleExperience] = useState(false);
+    const [filterExperience, setFilterExperience] = useState('');
+    const experienceList = getExperienceList(psychologists);
+
     const handleClickDropdownAlphabet = (e) => {
         e.preventDefault()
         setVisibleAlphabet(prevState => !prevState);
       };
+      const handleClickDropdownExperience = (e) => {
+        e.preventDefault()
+        
+        setVisibleExperience(prevState => !prevState);
+      };
+
+
+
+      const handleClickFilterExperience = event => {
+        event.preventDefault()
+        const newFilter = {
+          firstFilter: filter ? false : true,
+          filter: 'experience',
+          value: event.target.innerHTML,
+        };
+    
+        setFilterExperience(event.target.innerHTML);
+        
+    
+        changeFilter(newFilter);
+    
+        setVisibleExperience(false);
+      };
+
 
       const handleClickFilterAlphabet = event => {
         event.preventDefault()
         const newFilter = {
           firstFilter: filter ? false : true,
-          filter: 'rating',
+          filter: 'price_per_hour',
           value: event.target.innerHTML,
         };
     
         setFilterAlphabet(event.target.innerHTML);
-        console.log(filterAlphabet)
+       
     
         changeFilter(newFilter);
     
         setVisibleAlphabet(false);
+      };
+      const handleClickReset = (e) => {
+        // e.preventDefault()
+        setFilterAlphabet('');
+        setFilterExperience('');
+        
+        changeFilter(null);
+        
       };
 
 
@@ -50,21 +86,21 @@ export const Filter = ({changeFilter}) => {
     } ,[ ])
     
     return(
-<div>
-    <form action="">
-        <label>Filters</label>
-        <input type="text"  />
+<div className={css.filter}>
+    <form  className={css.filter_form}>
+        <label className={css.filter_label}>Rating
+        <input className={css.filter_input} type="text" placeholder={filterAlphabet}  />
         {visibleAlphabet ? (
-                  <button onClick={handleClickDropdownAlphabet}><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg onClick={handleClickDropdownAlphabet} className={css.filter_svg} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12.5L10 7.5L15 12.5" stroke="#FBFBFB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg></button>
+                  </svg>
         ) : (
-            <button onClick={handleClickDropdownAlphabet}><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12.5L10 7.5L15 12.5" stroke="#FBFBFB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg></button>
+            <svg onClick={handleClickDropdownAlphabet} className={css.filter_svg} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="#FBFBFB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
         )}
         {visibleAlphabet && (
-            <ul>
+            <ul className={css.filter_list}>
 {alphabetList.map((item, index) =>(
     <li key={index} onClick={handleClickFilterAlphabet}>
          {item}
@@ -72,8 +108,31 @@ export const Filter = ({changeFilter}) => {
 ))}
             </ul>
         )}
- 
+        </label>
+        <label className={css.filter_label}>Experience
+        <input className={css.filter_input} type="text" placeholder={filterExperience}  />
+        {visibleExperience ? (
+            <svg onClick={handleClickDropdownExperience} className={css.filter_svg} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12.5L10 7.5L15 12.5" stroke="#FBFBFB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+        ) : (
+            <svg onClick={handleClickDropdownExperience} className={css.filter_svg} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="#FBFBFB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+        )}
+        {visibleExperience && (
+            <ul className={css.filter_list}>
+{experienceList.map((item, index) =>(
+    <li key={index} onClick={handleClickFilterExperience}>
+         {item}
+    </li>
+))}
+            </ul>
+        )}
+        </label>
+        
 
+ <button className={css.filter_reset} onClick={handleClickReset}>Reset</button>
     </form>
 </div>
     )}

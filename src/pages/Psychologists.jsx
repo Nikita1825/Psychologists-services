@@ -18,7 +18,7 @@ const Psychologists = ({changeFilter}) => {
       if (filter.firstFilter) {
         onValue(database, snapshot => {
           let list;
-          if (filter.filter === 'rating') {
+          if (filter.filter === 'price_per_hour') {
             list = snapshot
               .val()
               .filter(item => item[filter.filter] <= filter.value);
