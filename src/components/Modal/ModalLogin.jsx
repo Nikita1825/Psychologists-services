@@ -5,13 +5,9 @@ import css from "./Modal.module.css"
 import { auth } from '../../firebase-config';
 import { Notify } from 'notiflix';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import {
-    createUserWithEmailAndPassword,
-    onAuthStateChanged,
-    updateProfile,
-  } from 'firebase/auth';
 
-export const ModalLogin  = ({ children, closeModal }) => {
+
+export const ModalLogin  = ({  closeModal }) => {
 
     useEffect(() => {
         const handleKeyDown = event => {
@@ -70,7 +66,7 @@ export const ModalLogin  = ({ children, closeModal }) => {
          handleBlur,
          handleSubmit,
          isSubmitting,
-         /* and other goodies */
+         
        }) => (
         <>
          <form className={css.register_form} onSubmit={handleSubmit}>

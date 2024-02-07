@@ -10,7 +10,7 @@ import {
     updateProfile,
   } from 'firebase/auth';
 
-export const ModalRegister  = ({ children, closeModal }) => {
+export const ModalRegister  = ({  closeModal }) => {
 
     useEffect(() => {
         const handleKeyDown = event => {
