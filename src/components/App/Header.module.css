@@ -1,10 +1,5 @@
 
-.appContainer{
-    /* max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto; */
 
-}
 
 
 .header{
@@ -56,14 +51,7 @@
     margin-left: auto;
     padding-top: 20px;
 }
-/* @media screen and (max-width:1044px) {
 
-   .appContainer{
-    padding-left: 0;
-    padding-right: 0;
-  
-}
-} */
 @media screen and (max-width:768px) {
     .container{
         justify-content: space-between;
@@ -84,4 +72,17 @@
   
 }
 }
-
+.logout{
+    border: 1px solid;
+    border-color: rgb(25, 26, 21,0.2);
+    border-radius: 30px;
+    padding: 14px 39px;
+    margin-right: 8px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #FBFBFB;
+    color: #191A15;
+    cursor: pointer;
+}

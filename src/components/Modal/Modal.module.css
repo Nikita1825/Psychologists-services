@@ -1,0 +1,77 @@
+.modal_window{
+    position: relative;
+    width: 600px;
+    padding: 64px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+  
+    @media (max-width: 768px) {
+      padding: 44px 24px;
+    }
+}
+.modal_backdrop{
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1200;
+  overflow: scroll;
+}
+.register_form{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.register_input{
+    border: none;
+    border-radius: 12px;
+    padding:
+16px 18px 16px 18px;
+}
+.register_btn{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 64px;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 14px 40px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #FC832C;
+    color: #FBFBFB;
+    cursor: pointer;
+}
+.register_icon{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    stroke: rgb(18, 20, 23);
+    cursor: pointer; 
+}
+.register_h{
+    /* font-family: Inter; */
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 20px;
+    color: #191A15;
+}
+.register_p{
+    /* font-family: Inter; */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgb(25, 26, 21, 0.5);
+    
+}

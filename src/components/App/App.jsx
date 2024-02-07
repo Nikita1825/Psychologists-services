@@ -1,9 +1,12 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
-import { lazy, Suspense,useState} from 'react';
+import {  Route, Routes } from 'react-router-dom';
+import { lazy, Suspense,useState, useEffect} from 'react';
 import css from "./Header.module.css"
-import { RegisterForm } from 'components/Register/Register';
-import LoginForm from 'components/Login/Login';
-import {  FilterContex } from '../../context';
+
+import {  FilterContex, Auth } from '../../context';
+import { auth } from 'firebase-config';
+
+import { onAuthStateChanged } from 'firebase/auth';
+import { Navigate } from 'components/Navigate/Navigate';
 
 const HomePage = lazy(() => import('pages/Home'))
 const PsychologistsPage = lazy(() => import('pages/Psychologists'));
@@ -14,38 +17,52 @@ const FavoritePage = lazy(() => import('pages/Favorites'));
 
 
 export const App = () => {
+  const [currentUser, setCurrentUser] = useState({
+    name: '',
+    email: '',
+  });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
   const [filter, setFilter] = useState(null);
 
   const changeFilter = newFilter => {
     setFilter(newFilter);
   };
+  const logOut = () => {
+    setCurrentUser({
+      name: '',
+      email: '',
+    });
+    setIsLoggedIn(false);
+  };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        const newUser = {
+          name: user.displayName,
+          email: user.email,
+        };
+        setCurrentUser(newUser);
+        setIsLoggedIn(true);
+      } else {
+        setCurrentUser({
+          name: '',
+          email: '',
+        });
+        setIsLoggedIn(false);
+      }
+    });
+  }, []);
 
  return (
+  <Auth.Provider value={{currentUser, isLoggedIn} }>
   <FilterContex.Provider value={filter}>
 
   <div className={css.appContainer}  >
-  <header className={css.header} >
-      <a href='/#' className={css.logo}><span className={css.logo_span}>psychologists.</span>services</a>
-    <div className={css.container}>
-
-    <nav className={css.navigation} >
-      <NavLink className={css.nav_link}  to="/">
-        Home
-      </NavLink>
-      <NavLink className={css.nav_link} to="/psychologists">
-      Psychologists
-      </NavLink>
-      <NavLink className={css.nav_link}  to="/favorites">
-        Favourites
-      </NavLink>
-    </nav>
-    </div>
-    <div className={css.form}>
-      
-    <LoginForm />
-    <RegisterForm/>
-    </div>
-  </header>
+ 
+  <Navigate logOut={logOut}/>
   <main>
     <Suspense>
       <Routes>
@@ -57,6 +74,7 @@ export const App = () => {
   </main>
 </div>
   </FilterContex.Provider>
+  </Auth.Provider>
   );
 };
 

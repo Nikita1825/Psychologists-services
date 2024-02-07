@@ -1,8 +1,16 @@
 import React from "react";
 import Girl from '../img/Imgmane.jpg'
-
+import { useNavigate } from 'react-router-dom';
 import css from '../components//Home/Home.module.css'
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/psychologists')
+  }
+
+
     return (
       <div >
         <div className={css.home}>
@@ -11,7 +19,7 @@ const Home = () => {
 
       <h1 className={css.home_h}>The road to the<span className={css.home_depths}> depths</span>  of the human soul</h1>
       <p className={css.home_p}>We help you to reveal your potential, overcome challenges and find a guide in your own life with the help of our experienced psychologists.</p>
-      <button className={css.home_btn}>Get started</button>
+      <button onClick={handleClick} className={css.home_btn}>Get started</button>
       <div className={css.home_price}>
         
       <svg className={css.home_svg} width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +44,7 @@ const Home = () => {
 
 <h1 className={css.home_h}>The road to the<span>depths</span>  of the human soul</h1>
 <p className={css.home_p}>We help you to reveal your potential, overcome challenges and find a guide in your own life with the help of our experienced psychologists.</p>
-<button  className={css.home_btn}>Get started</button>
+<button type="button"  onClick={handleClick} className={css.home_btn}>Get started</button>
   </div>
         </div>
       </div>
