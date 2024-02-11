@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://nikita.github.io/Psychologists-services/",
   "dependencies": {
+    "@mui/x-date-pickers": "^6.19.4",
+    "@syncfusion/ej2-react-calendars": "^24.2.3",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -15,6 +17,7 @@
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
+    "react-time-picker": "^6.6.0",
     "redux": "^5.0.1",
     "web-vitals": "^2.1.3"
   },

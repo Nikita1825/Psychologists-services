@@ -1,3 +1,9 @@
+
+.react-time-picker{
+    display: flex;
+    gap: 20px;
+}
+
 .modal_window{
     position: relative;
     width: 600px;
@@ -74,4 +80,7 @@
     line-height: 20px;
     color: rgb(25, 26, 21, 0.5);
     
+}
+.picker{
+    display: flex;
 }
