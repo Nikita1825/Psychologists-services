@@ -2,12 +2,13 @@ import React from 'react'
 import css from './Login.module.css'
 import { useState } from 'react';
 import {ModalLogin} from '../Modal/ModalLogin'
+import { useNavigate } from 'react-router-dom';
 
 
 export const LoginForm = () => {
   const [childrenModal, setChildrenModal] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const navigate = useNavigate();
 
  
   const closeModal = event => {
@@ -17,7 +18,7 @@ export const LoginForm = () => {
   };
   const handleClick = event => {
   
-
+    navigate('/')
     const value = event.target.innerHTML;
     console.log(value)
 

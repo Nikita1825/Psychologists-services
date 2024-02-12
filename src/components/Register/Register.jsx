@@ -2,12 +2,13 @@ import React from 'react'
 import css from './Register.module.css'
 import { ModalRegister } from 'components/Modal/ModalRegister';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const RegisterForm = () => {
 
   const [childrenModal, setChildrenModal] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const navigate = useNavigate();
 
  
   const closeModal = event => {
@@ -17,7 +18,7 @@ export const RegisterForm = () => {
   };
   const handleClick = event => {
   
-
+    navigate('/')
     const value = event.target.innerHTML;
     console.log(value)
     if (value === 'Registration') {
