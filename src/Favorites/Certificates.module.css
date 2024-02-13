@@ -1,0 +1,134 @@
+.certificate_img{
+    margin-left: auto;
+}
+.certificate_info{
+    display: flex;
+    padding-left: 100px;
+    padding-bottom: 150px;
+}
+.certificate_text{
+    padding-top: 150px;
+    max-width: 400px;
+}
+.certificate_change{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 82px;
+    color: #191A15;
+    margin-bottom: 20px;
+}
+.certificate_p{
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #191A15;
+   
+}
+.certificate_gift{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #8A8A89;
+    margin-bottom: 8px;
+}
+.certificate_select{
+    display: flex;
+   justify-content: center;
+   font-family: Inter;
+   font-size: 50px;
+   font-weight: 600;
+   line-height: 45px;
+}
+.certificate_list{
+    margin-top: 100px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    
+}
+.certificate_li{
+    align-items: center;
+    max-width: 300px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.certificate_quantity{
+    font-size: 70px;
+   font-weight: 500;
+   line-height: 28px;
+   margin-bottom: 5px;
+}
+.certificate_session{
+    font-family: Inter;
+   font-size: 24px;
+   font-weight: 500;
+   line-height: 24px;
+}
+.certificate_description{
+    padding:0px 40px;
+    /* font-family: Inter; */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+}
+.certificate_price{
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #38CD3E;
+}
+.certificate_btn{
+    border: 1px solid;
+    border-radius: 14px;
+    padding: 14px 65px;
+    margin-top: 15px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #FC832C;
+    color: #FBFBFB;
+    cursor: pointer;
+    height: 48px;
+}
+.certificate{
+    padding-bottom: 100px;
+}
+.certificate_psychologists{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+@media screen and (max-width:768px){
+    .certificate_info{
+        display: inline;
+    }
+    .certificate_text{
+        
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .certificate_img{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .certificate_list{
+        display: inline;
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+
+    }
+    .certificate_li{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

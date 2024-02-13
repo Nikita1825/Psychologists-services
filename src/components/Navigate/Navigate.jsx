@@ -43,8 +43,8 @@ const [nav, setNav]= useState(false)
             Psychologists
             </NavLink>
             {isLoggedIn && (
-            <NavLink onClick={()=> setNav(!nav)} className={css.nav_link}  to="/favorites">
-              Favourites
+            <NavLink onClick={()=> setNav(!nav)} className={css.nav_link}  to="/сertificate">
+              Certificate
             </NavLink>)}
 
             <div className={css.form}>

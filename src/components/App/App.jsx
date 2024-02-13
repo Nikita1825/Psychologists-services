@@ -10,7 +10,7 @@ import { Navigate } from 'components/Navigate/Navigate';
 
 const HomePage = lazy(() => import('pages/Home'))
 const PsychologistsPage = lazy(() => import('pages/Psychologists'));
-const FavoritePage = lazy(() => import('pages/Favorites'));
+const FavoritePage = lazy(() => import('pages/Certificate'));
 
 
 
@@ -68,7 +68,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/psychologists" element={<PsychologistsPage changeFilter={changeFilter} />} />
-        <Route path="/favorites" element={<FavoritePage />} />
+        <Route path="/сertificate" element={<FavoritePage />} />
       </Routes>
     </Suspense>
   </main>
