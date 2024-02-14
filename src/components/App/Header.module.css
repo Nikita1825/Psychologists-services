@@ -44,6 +44,10 @@
     text-decoration: none;
     height: 20px;
 }
+.nav_link:focus{
+    color:#FC832C;
+    
+}
 .logo_span{
     color:#FC832C
 }

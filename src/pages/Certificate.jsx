@@ -45,21 +45,21 @@ const send =()=>{
             A slightly more in-depth acquaintance with psychology and oneself
           </p>
           <p className={css.certificate_price}>200$</p>
-          <button className={css.certificate_btn}>Give</button>
+          <button onClick={send} className={css.certificate_btn}>Give</button>
         </li>
         <li className={css.certificate_li}>
           <h3 className={css.certificate_quantity}>5</h3>
           <p className={css.certificate_session}>session</p>
           <p className={css.certificate_description}>The ability to see and understand your internal conflicts</p>
           <p className={css.certificate_price}>450$</p>
-          <button className={css.certificate_btn}>Give</button>
+          <button onClick={send} className={css.certificate_btn}>Give</button>
         </li>
         <li className={css.certificate_li}>
           <h3 className={css.certificate_quantity}>10</h3>
           <p className={css.certificate_session}>session</p>
           <p className={css.certificate_description}>Opportunity to better understand your problems</p>
           <p className={css.certificate_price}>800$</p>
-          <button className={css.certificate_btn}>Give</button>
+          <button onClick={send} className={css.certificate_btn}>Give</button>
         </li>
       </ul>
       <p className={css.certificate_psychologists}>©Psychologists-services. All rights reserved. 2024</p>
