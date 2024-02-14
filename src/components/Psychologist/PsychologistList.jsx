@@ -1,16 +1,16 @@
 import React from 'react';
 import css from './PsychologistList.module.css';
-import { useState, useContext } from 'react';
-import { Auth } from '../../context';
+import { useState } from 'react';
+// import { Auth } from '../../context';
 
-import { Notify } from 'notiflix';
+// import { Notify } from 'notiflix';
 
 import { ModalAppointment } from 'components/Modal/ModalAppointment';
 
 export const PsychologistList = ({ psychologists }) => {
-  const authContex = useContext(Auth);
+  // const authContex = useContext(Auth);
  
-  const isLoggedIn = authContex.isLoggedIn;
+  // const isLoggedIn = authContex.isLoggedIn;
  
   const [elloadMore, setLoadMore] = useState(3);
  
@@ -26,14 +26,14 @@ export const PsychologistList = ({ psychologists }) => {
     setTeacherCardActive(psychologist);
   };
 
-  const handleClickHeart = () => {
-    if (!isLoggedIn) {
-      Notify.failure(
-        'This functionality is available only to authorized users'
-      );
-      return;
-    }
-  };
+  // const handleClickHeart = () => {
+  //   if (!isLoggedIn) {
+  //     Notify.failure(
+  //       'This functionality is available only to authorized users'
+  //     );
+  //     return;
+  //   }
+  // };
 
   const [childrenModal, setChildrenModal] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
