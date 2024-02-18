@@ -11,4 +11,9 @@
     background-color: #FBFBFB;
     color:  #191A15;
     cursor: pointer;
+    transition: 0.5s;
+}
+.login:hover{
+    background-color: black;
+    color: #FBFBFB;
 }

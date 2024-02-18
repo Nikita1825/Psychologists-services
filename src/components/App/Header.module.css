@@ -1,135 +1,134 @@
-
-
-
-
-.header{
-
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid ;
-    padding-bottom: 24px;
-    border-color: rgb(25, 26, 21,0.1);
-
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid;
+  padding-bottom: 24px;
+  border-color: rgb(25, 26, 21, 0.1);
 }
-.container{
-    display: flex;
-    align-self: stretch;
-    justify-content: center;
-    padding-top: 20px;
-    align-items: center;
-    
+.container {
+  display: flex;
+  align-self: stretch;
+  justify-content: center;
+  padding-top: 20px;
+  align-items: center;
 }
-.navigation{
-    display: flex;
-    gap: 40px;
+.navigation {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin-right: auto;
+  padding-top: 20px;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: none;
+  color: #191a15;
+}
+.nav_link {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #191a15;
+  text-decoration: none;
+  height: 20px;
+  transition: 0.3s;
+}
+.nav_link:focus {
+  color: #fc832c;
+}
+.nav_link:hover {
+  color: #f37113;
+  transform: scale(110%);
+}
+.logo_span {
+  color: #fc832c;
+}
+.form {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
     justify-content: space-between;
-    align-items: center;
-}
-.logo{
-    margin-right: auto;
     padding-top: 20px;
-    font-family: Inter;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    text-decoration: none;
-    color:#191A15
-}
-.nav_link{
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    color:#191A15;
-    text-decoration: none;
-    height: 20px;
-}
-.nav_link:focus{
-    color:#FC832C;
-    
-}
-.logo_span{
-    color:#FC832C
-}
-.form{
-    display: flex;
-    justify-content:flex-end;
-    margin-left: auto;
-    /* padding-top: 20px; */
-}
-
-@media screen and (max-width:768px) {
-    .container{
-        justify-content: space-between;
-        padding-top: 20px;
-    }
-    .logo{
-        margin-right: 0;
-    }
-   .navigation{
+  }
+  .logo {
+    margin-right: 0;
+  }
+  .navigation {
     display: none;
-   }
-   .form{
+  }
+  .form {
     display: none;
-   }
-   .appContainer{
+  }
+  .appContainer {
     padding-left: 0;
     padding-right: 0;
-  
+  }
 }
+.logout {
+  border: 1px solid;
+  border-color: rgb(25, 26, 21, 0.2);
+  border-radius: 30px;
+  padding: 14px 39px;
+  margin-right: 8px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #fbfbfb;
+  color: #191a15;
+  cursor: pointer;
+  transition: 0.5s;
 }
-.logout{
-    border: 1px solid;
-    border-color: rgb(25, 26, 21,0.2);
-    border-radius: 30px;
-    padding: 14px 39px;
-    margin-right: 8px;
-    font-family: Inter;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    background-color: #FBFBFB;
-    color: #191A15;
+.logout:hover {
+  background-color: black;
+  color: #fbfbfb;
+}
+.burger_btn {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .burger_btn {
+    display: block;
+    position: fixed;
+    right: 15px;
+    top: 25px;
     cursor: pointer;
-}
-.burger_btn{
-    display: none;
-}
-@media screen and (max-width:768px) {
-    .burger_btn{
-        display: block;
-        position: fixed;
-        right: 15px;
-        top: 25px;
-        cursor: pointer;
-        z-index: 10;
-
-    }
-    .navigation{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: fixed;
-        right: 0;
-        left: -100%;
-        top: 0;
-        bottom: 0;
-        z-index: 10;
-        width: 100%;
-        height: 100%;
-        transition: Left 1s;
-        background-color: #FBFBFB;
-        align-items: center;
-    }
-    .form{
-        display: block;
-        margin-left: 0;
-        gap: 15px;
+    z-index: 10;
+  }
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    transition: Left 1s;
+    background-color: #fbfbfb;
+    align-items: center;
+  }
+  .form {
+    display: block;
+    margin-left: 0;
+    gap: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    }
-    .active{
-        left: 0;
-    }
+  }
+  .active {
+    left: 0;
+  }
 }

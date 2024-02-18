@@ -1,6 +1,5 @@
 .register{
     border: 1px solid  ;
-    
     border-radius: 30px;
     padding: 14px 40px;
     margin-right: 8px;
@@ -11,4 +10,8 @@
     background-color: #FC832C;
     color: #FBFBFB;
     cursor: pointer;
+    transition: 0.3s;
+}
+.register:hover{
+    background-color: #F37113;
 }

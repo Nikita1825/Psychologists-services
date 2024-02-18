@@ -1,20 +1,16 @@
-import {  Route, Routes } from 'react-router-dom';
-import { lazy, Suspense,useState, useEffect} from 'react';
-import css from "./Header.module.css"
+import { Route, Routes } from 'react-router-dom';
+import { lazy, Suspense, useState, useEffect } from 'react';
+import css from './Header.module.css';
 
-import {  FilterContex, Auth } from '../../context';
+import { FilterContex, Auth } from '../../context';
 import { auth } from 'firebase-config';
 
 import { onAuthStateChanged } from 'firebase/auth';
 import { Navigate } from 'components/Navigate/Navigate';
 
-const HomePage = lazy(() => import('pages/Home'))
+const HomePage = lazy(() => import('pages/Home'));
 const PsychologistsPage = lazy(() => import('pages/Psychologists'));
 const FavoritePage = lazy(() => import('pages/Certificate'));
-
-
-
-
 
 export const App = () => {
   const [currentUser, setCurrentUser] = useState({
@@ -22,7 +18,6 @@ export const App = () => {
     email: '',
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
 
   const [filter, setFilter] = useState(null);
 
@@ -56,25 +51,25 @@ export const App = () => {
     });
   }, []);
 
- return (
-  <Auth.Provider value={{currentUser, isLoggedIn} }>
-  <FilterContex.Provider value={filter}>
-
-  <div className={css.appContainer}  >
- 
-  <Navigate logOut={logOut}/>
-  <main>
-    <Suspense>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/psychologists" element={<PsychologistsPage changeFilter={changeFilter} />} />
-        <Route path="/сertificate" element={<FavoritePage />} />
-      </Routes>
-    </Suspense>
-  </main>
-</div>
-  </FilterContex.Provider>
-  </Auth.Provider>
+  return (
+    <Auth.Provider value={{ currentUser, isLoggedIn }}>
+      <FilterContex.Provider value={filter}>
+        <div className={css.appContainer}>
+          <Navigate logOut={logOut} />
+          <main>
+            <Suspense>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route
+                  path="/psychologists"
+                  element={<PsychologistsPage changeFilter={changeFilter} />}
+                />
+                <Route path="/сertificate" element={<FavoritePage />} />
+              </Routes>
+            </Suspense>
+          </main>
+        </div>
+      </FilterContex.Provider>
+    </Auth.Provider>
   );
 };
-
